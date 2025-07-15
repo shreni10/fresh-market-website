@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh Market - Your Local Grocery Store</title>
+    <style>
+        /* CSS Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header Styling */
+        header {
+            background-color: #2e7d32;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        h2 {
+            color: #2e7d32;
+            font-size: 2em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #4caf50;
+            padding-bottom: 10px;
+        }
+        
+        h3 {
+            color: #388e3c;
+            font-size: 1.5em;
+            margin-top: 25px;
+        }
+        
+        /* Paragraph Styling */
+        p {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        /* Image Styling */
+        .product-image {
+            width: 100%;
+            max-width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 15px 0;
+            border: 3px solid #4caf50;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        /* Product Grid Layout */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .product-card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+        
+        /* Links Styling */
+        .nav-links {
+            background-color: #4caf50;
+            padding: 15px;
+            text-align: center;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1.1em;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 25px;
+            background-color: rgba(255,255,255,0.2);
+            transition: background-color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            background-color: rgba(255,255,255,0.3);
+            text-decoration: underline;
+        }
+        
+        /* Button Styling */
+        .alert-button {
+            background-color: #ff5722;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 25px;
+            cursor: pointer;
+            margin: 20px 10px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(255,87,34,0.3);
+        }
+        
+        .alert-button:hover {
+            background-color: #e64a19;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255,87,34,0.4);
+        }
+        
+        .alert-button:active {
+            transform: translateY(0);
+        }
+        
+        .shop-button {
+            background-color: #2196f3;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1em;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+        
+        .shop-button:hover {
+            background-color: #1976d2;
+            transform: scale(1.05);
+        }
+        
+        /* Footer Styling */
+        footer {
+            background-color: #2e7d32;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        
+        /* Spacing and Layout Adjustments */
+        .intro-section {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .contact-info {
+            background: #e8f5e8;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #4caf50;
+        }
+        
+        .highlight {
+            background-color: #ffeb3b;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- HTML Structure -->
+    <header>
+        <h1>🛒 Fresh Market</h1>
+        <p>Your Neighborhood Grocery Store</p>
+    </header>
+    
+    <div class="container">
+        <!-- Navigation Links -->
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
+        </div>
+        
+        <!-- Introduction Section -->
+        <div class="intro-section">
+            <h2>Welcome to Fresh Market!</h2>
+            <p>At Fresh Market, we pride ourselves on providing the <span class="highlight">freshest produce</span>, quality groceries, and exceptional customer service to our community. Our family-owned store has been serving the neighborhood for over 25 years.</p>
+            
+            <p>We source our products from local farms and trusted suppliers to ensure you get the best quality at affordable prices. From fresh fruits and vegetables to pantry staples and specialty items, we have everything you need for your daily shopping.</p>
+            
+            <!-- JavaScript Alert Button -->
+            <button class="alert-button" onclick="showWelcomeAlert()">🎉 Click for Special Offers!</button>
+        </div>
+        
+        <!-- Featured Products Section -->
+        <h2>Featured Products</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <h3>Fresh Produce</h3>
+                <img src="C:\Users\Shreni\OneDrive\Pictures\produces.jpg" alt="Fresh fruits and vegetables" class="product-image">
+                <p>Farm-fresh fruits and vegetables delivered daily. Organic options available. Get your daily dose of vitamins and minerals with our colorful selection.</p>
+                <button class="shop-button" onclick="productAlert('Fresh Produce')">Shop Now</button>
+            </div>
+            
+            <div class="product-card">
+                <h3>Dairy & Eggs</h3>
+                <img src="C:\Users\Shreni\Downloads\dairy and eggs.jpeg" alt="Dairy products and eggs" class="product-image">
+                <p>Premium dairy products including milk, cheese, yogurt, and farm-fresh eggs. All from local dairy farms committed to quality and freshness.</p>
+                <button class="shop-button" onclick="productAlert('Dairy & Eggs')">Shop Now</button>
+            </div>
+            
+            <div class="product-card">
+                <h3>Bakery Items</h3>
+                <img src="C:\Users\Shreni\Downloads\pastry.avif" alt="Fresh bread and bakery items" class="product-image">
+                <p>Freshly baked bread, pastries, and cakes made daily in our in-store bakery. Perfect for breakfast, lunch, or special occasions.</p>
+                <button class="shop-button" onclick="productAlert('Bakery Items')">Shop Now</button>
+            </div>
+        </div>
+        
+        <!-- About Section -->
+        <div class="intro-section">
+            <h2>About Fresh Market</h2>
+            <p>Founded in 1998, Fresh Market has been a cornerstone of our community, providing quality groceries and personalized service. Our experienced staff is always ready to help you find what you need and discover new products.</p>
+            
+            <p>We believe in supporting local businesses and farmers, which is why we partner with regional suppliers whenever possible. This not only ensures freshness but also helps strengthen our local economy.</p>
+            
+            <h3>Why Choose Fresh Market?</h3>
+            <ul>
+                <li><strong>Fresh Quality:</strong> Daily deliveries of fresh produce and products</li>
+                <li><strong>Competitive Prices:</strong> Great value for quality groceries</li>
+                <li><strong>Local Support:</strong> Supporting local farmers and suppliers</li>
+                <li><strong>Friendly Service:</strong> Knowledgeable staff ready to assist</li>
+                <li><strong>Convenient Location:</strong> Easy parking and accessible store layout</li>
+            </ul>
+        </div>
+        
+        <!-- Contact Information -->
+        <div class="contact-info">
+            <h2>Visit Us Today!</h2>
+            <p><strong>Address:</strong> 123 Main Street, Your City, State 12345</p>
+            <p><strong>Phone:</strong> (555) 123-4567</p>
+            <p><strong>Hours:</strong> Monday-Saturday 8AM-9PM, Sunday 9AM-7PM</p>
+            <p><strong>Email:</strong> info@freshmarket.com</p>
+            
+            <!-- More Navigation Links -->
+            <p>Quick Links: 
+                <a href="#weekly-specials" style="color: #2e7d32; text-decoration: none; margin: 0 10px;">Weekly Specials</a> |
+                <a href="#recipes" style="color: #2e7d32; text-decoration: none; margin: 0 10px;">Recipe Ideas</a> |
+                <a href="#loyalty-program" style="color: #2e7d32; text-decoration: none; margin: 0 10px;">Loyalty Program</a>
+            </p>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Fresh Market. All rights reserved. | Follow us on social media for daily deals!</p>
+    </footer>
+    
+    <script>
+        // JavaScript Functions for Interactivity
+        
+        // Main alert function as requested
+        function showWelcomeAlert() {
+            alert("🎉 Welcome to Fresh Market! 🎉\n\n" +
+                  "Special Offers This Week:\n" +
+                  "• 20% off all organic produce\n" +
+                  "• Buy 2 Get 1 Free on bakery items\n" +
+                  "• Fresh fish delivered every Tuesday & Friday\n\n" +
+                  "Thank you for choosing Fresh Market!");
+        }
+        
+        // Additional function for product-specific alerts
+        function productAlert(productName) {
+            alert("You selected: " + productName + "\n\n" +
+                  "Thank you for your interest! In a real store, this would add the item to your cart or show detailed product information.\n\n" +
+                  "Visit us in-store or call (555) 123-4567 for more information!");
+        }
+        
+        // Add some interactive behavior when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add hover effects to product cards
+            const productCards = document.querySelectorAll('.product-card');
+            
+            productCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.backgroundColor = '#f0f8f0';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.backgroundColor = 'white';
+                });
+            });
+            
+            // Console message for developers
+            console.log("Fresh Market website loaded successfully! 🛒");
+        });
+    </script>
+</body>
+</html>
